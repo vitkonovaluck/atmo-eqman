@@ -33,6 +33,7 @@ Route::get('/home', function (){
 
 Route::group(['prefix' => 'admin','namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'auth'], function () {
     Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('/message', MessageController::class);
     Route::resource('/invetory_type', InvetoryTypeController::class);
     //Route::resource('/invetory', AInvetoryController::class);
 
