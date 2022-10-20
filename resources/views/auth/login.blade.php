@@ -20,8 +20,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user"
-                                               id="email" aria-describedby="emailHelp" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
-                                               placeholder="Введіть Email Address...">
+                                               id="email" aria-describedby="emailHelp" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Введіть Email Address...">
                                         @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -29,8 +28,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-user"
-                                               id="exampleInputPassword" placeholder="Пароль">
+                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Пароль">
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -50,7 +48,7 @@
                                 <hr>
                                 <div class="text-center">
                                     @if (Route::has('password.request'))
-                                        <a class="small" href="/forgot">Забули пароль?</a>
+                                        <a class="small" href="{{url('/password/reset')}}">Забули пароль?</a>
                                     @endif
 
                                 </div>

@@ -31,7 +31,7 @@
                         bgcolor="#a5a5a5"
                         @endif
                         >
-                        <th scope="row">{{$msg_from->read}}<input type="checkbox"></th>
+                        <th scope="row"><input type="checkbox" id="cb{{$loop->iteration}}" name="cb{{$loop->iteration}}"></th>
                         <td>{{$msg_from->title}}<br>
                             <small>{{substr($msg_from->text, 0,50)}}</small></td>
                         <td>{{$msg_from->from}}</td>

@@ -19,7 +19,7 @@
 
                                     @if ($errors->has('name'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('name') }}</strong>
+                                            <p class="text-danger"><strong>{{ $errors->first('name') }}</strong></p>
                                         </span>
                                     @endif
                                 </div>
@@ -29,8 +29,8 @@
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
+                                            <p class="text-danger"><strong>{{ $errors->first('email') }}</strong></p>
+                                    </span>
                                 @endif
                             </div>
                             <div class="form-group row">
@@ -39,7 +39,7 @@
 
                                     @if ($errors->has('password'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('password') }}</strong>
+                                            <p class="text-danger"> <strong>{{ $errors->first('password') }}</strong></p>
                                         </span>
                                     @endif
                                 </div>

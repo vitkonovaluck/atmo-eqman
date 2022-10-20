@@ -16,7 +16,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $msg_from  = Message::where('from','=',Auth::user()->id)->latest()->paginate(20);
+        $msg_from  = Message::where('from','=',Auth::user()->id)->with('users')->latest()->paginate(20);
         $msg_to  = [];//Message::where('from','=',Auth::user()->id)->with('users')->latest()->paginate(20);
 
         return view('admin.message.index',[
